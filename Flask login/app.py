@@ -13,7 +13,7 @@ usuarios = {
 def index():
     if 'username' in session:
         return 'Estás logueado como ' + session['username'] + '<br><a href="/logout">Cerrar sesión</a>'
-    return 'No estás logueado <br><a href="/login">Iniciar sesión</a>'
+    return 'No estas logueado <br><a href="/login">Iniciar sesión</a>'
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -24,7 +24,7 @@ def login():
             session['username'] = username
             return redirect(url_for('index'))
         else:
-            return 'Credenciales inválidas. <a href="/login">Intenta de nuevo</a>'
+            return 'Credenciales incorrectas. <a href="/login">Intenta de nuevo</a>'
     return render_template('login.html')
 
 @app.route('/logout')
