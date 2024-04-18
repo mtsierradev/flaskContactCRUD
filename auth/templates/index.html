@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %} Index {% endblock %}
+
+{% block content %}
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4">
+        <img src="/static/img/oktopus.jpeg" class="card-img-top" alt="...">
+      <h2 class="card-title text-center mb-4"></h2>
+      <form>
+        <div class="mb-3">
+          <label for="username" class="form-label">Username:</label>
+          <input type="text" id="username" name="username" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password:</label>
+          <input type="password" id="password" name="password" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+
+        {% if current_user.is_authenticated %}
+            <h3>Hello {{ current_user.username }}</h3>
+        {% else %}
+            <h3>Bienvenido {{ current_user.username }}!</h3>
+        {% endif %}
+
+
+        <a href="{{ url_for('signup') }}">Signup</a>&nbsp
+        <a href="{{ url_for('login') }}">Login</a>&nbsp
+        <a href="{{ url_for('logout') }}">Logout</a>
+      </form>
+    </div>
+</div>    
+
+{% endblock %}

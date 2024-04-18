@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    
 </head>
 <body>
     <div id="image-container">
-        <img src="{{ url_for('static', filename='logo.png') }}" alt="Example Image" style="display: block; margin: 0 auto;">
+        <img src="/static/oktopus.jpeg" alt="Example Image" style="display: block; margin: 0 auto;">
     </div>
     <div id="login-container">
         <form action="/login" method="post">
             <label for="username">Usuario:   </label>
             <input type="text" id="username" name="username" required size="10"><br>
             <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" required size="20" style="text-align:right;"><br>
+            <input type="password" id="password" name="password" required size="20"><br>
             <input type="submit" value="Login">
-        </form>
-        
+        </form>        
     </div>
 </body>
 </html>
